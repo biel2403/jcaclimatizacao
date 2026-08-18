@@ -3,7 +3,7 @@ function onlyDigits(value) {
 }
 
 function buildWhatsappLink(phone, name, serviceType) {
-  const text = `Ola, ${name}! Recebi sua solicitacao de orcamento para ${serviceType}. Gostaria de conversar sobre o servico.`;
+  const text = `Olá, ${name}! Recebi sua solicitação de orçamento para ${serviceType}. Gostaria de conversar sobre o serviço.`;
   return `https://wa.me/${onlyDigits(phone)}?text=${encodeURIComponent(text)}`;
 }
 

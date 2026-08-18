@@ -21,13 +21,13 @@ function getApiBaseUrl() {
 window.JCA_CONFIG = {
   apiBaseUrl: getApiBaseUrl(),
   brand: {
-    name: "JCA Climatizacao",
-    description: "Instalacao, manutencao, higienizacao, limpeza e reparo de ar-condicionado.",
+    name: "JCA Climatização",
+    description: "Instalação, manutenção, higienização, limpeza e reparo de ar-condicionado.",
     phone: "(11) 99999-9999",
     whatsapp: "5511999999999",
     email: "contato@jcaclimatizacao.com.br",
-    city: "Sao Paulo - SP",
-    regions: "Centro, Zona Leste, Zona Norte e regioes proximas",
+    city: "São Paulo - SP",
+    regions: "Centro, Zona Leste, Zona Norte e regiões próximas",
     instagram: "@jcaclimatizacao"
   }
 };

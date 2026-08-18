@@ -8,12 +8,18 @@ const VALID_STATUSES = [
 ];
 
 const VALID_SERVICES = [
-  "Instalacao",
-  "Manutencao",
-  "Higienizacao e limpeza",
+  "Instalação",
+  "Manutenção",
+  "Higienização e limpeza",
   "Reparo",
   "Outro"
 ];
+
+const SERVICE_ALIASES = {
+  Instalacao: "Instalação",
+  Manutencao: "Manutenção",
+  "Higienizacao e limpeza": "Higienização e limpeza"
+};
 
 function cleanText(value, maxLength) {
   if (value === undefined || value === null) return null;
@@ -39,23 +45,24 @@ function validateLeadInput(body) {
   const name = cleanText(body.name, 120);
   const phone = cleanPhone(body.phone);
   const email = cleanText(body.email, 180);
-  const serviceType = cleanText(body.serviceType, 40);
+  const serviceInput = cleanText(body.serviceType, 40);
+  const serviceType = SERVICE_ALIASES[serviceInput] || serviceInput;
   const quantity = Number(body.quantity || 1);
   const description = cleanText(body.description, 1000);
 
   const errors = [];
 
   if (!name || name.length < 2) errors.push("Informe seu nome.");
-  if (!phone || phone.length < 10) errors.push("Informe um WhatsApp valido.");
+  if (!phone || phone.length < 10) errors.push("Informe um WhatsApp válido.");
   if (!serviceType || !VALID_SERVICES.includes(serviceType)) {
-    errors.push("Informe o servico desejado.");
+    errors.push("Informe o serviço desejado.");
   }
-  if (email && !isEmail(email)) errors.push("Informe um email valido.");
+  if (email && !isEmail(email)) errors.push("Informe um email válido.");
   if (!Number.isInteger(quantity) || quantity < 1 || quantity > 50) {
-    errors.push("Informe uma quantidade valida.");
+    errors.push("Informe uma quantidade válida.");
   }
   if (description && description.length > 1000) {
-    errors.push("Descricao muito longa.");
+    errors.push("Descrição muito longa.");
   }
 
   return {

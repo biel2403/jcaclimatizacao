@@ -6,13 +6,25 @@ test("valida lead valido", () => {
   const result = validateLeadInput({
     name: "Mariana",
     phone: "(11) 99999-0000",
-    serviceType: "Higienizacao e limpeza",
+    serviceType: "Higienização e limpeza",
     email: "mariana@example.com",
     quantity: "1"
   });
 
   assert.equal(result.errors.length, 0);
   assert.equal(result.data.phone, "11999990000");
+  assert.equal(result.data.serviceType, "Higienização e limpeza");
+});
+
+test("normaliza servico sem acento", () => {
+  const result = validateLeadInput({
+    name: "Mariana",
+    phone: "(11) 99999-0000",
+    serviceType: "Instalacao"
+  });
+
+  assert.equal(result.errors.length, 0);
+  assert.equal(result.data.serviceType, "Instalação");
 });
 
 test("rejeita lead sem campos obrigatorios", () => {

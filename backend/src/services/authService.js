@@ -28,13 +28,13 @@ async function login(email, password) {
   const user = result.rows[0];
 
   if (!user) {
-    throw new AppError("Email ou senha invalidos.", 401, "INVALID_LOGIN");
+    throw new AppError("Email ou senha inválidos.", 401, "INVALID_LOGIN");
   }
 
   const matches = await bcrypt.compare(password || "", user.password_hash);
 
   if (!matches) {
-    throw new AppError("Email ou senha invalidos.", 401, "INVALID_LOGIN");
+    throw new AppError("Email ou senha inválidos.", 401, "INVALID_LOGIN");
   }
 
   return {

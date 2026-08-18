@@ -18,11 +18,11 @@ form.addEventListener("submit", async (event) => {
   }
 
   if (!payload.phone || payload.phone.replace(/\D/g, "").length < 10) {
-    return showMessage("Informe um WhatsApp valido.");
+    return showMessage("Informe um WhatsApp válido.");
   }
 
   if (!payload.serviceType) {
-    return showMessage("Selecione o servico desejado.");
+    return showMessage("Selecione o serviço desejado.");
   }
 
   try {

@@ -92,7 +92,7 @@ async function getLeadById(id) {
 
 async function updateLeadStatus(id, status) {
   if (!validateStatus(status)) {
-    throw new AppError("Status invalido.", 400, "INVALID_STATUS");
+    throw new AppError("Status inválido.", 400, "INVALID_STATUS");
   }
 
   const result = await pool.query(

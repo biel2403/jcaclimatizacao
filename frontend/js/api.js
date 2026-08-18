@@ -52,8 +52,8 @@ function statusLabel(status) {
   return {
     NOVO: "Novo",
     CONTATO: "Em contato",
-    ORCAMENTO: "Orcamento",
-    NEGOCIACAO: "Negociacao",
+    ORCAMENTO: "Orçamento",
+    NEGOCIACAO: "Negociação",
     FECHADO: "Fechado",
     PERDIDO: "Perdido"
   }[status] || status;

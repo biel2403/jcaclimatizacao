@@ -86,8 +86,12 @@ img {
   flex-wrap: wrap;
   gap: 12px;
   align-items: center;
-  color: var(--muted);
   font-size: 0.95rem;
+}
+
+.nav a {
+  color: #d8e8f8;
+  font-weight: 800;
 }
 
 .nav a:not(.button):hover {

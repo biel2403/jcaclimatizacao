@@ -7,9 +7,9 @@ test("remove caracteres nao numericos do telefone", () => {
 });
 
 test("gera link do WhatsApp com mensagem", () => {
-  const link = buildWhatsappLink("(11) 99999-0000", "Mariana", "Higienizacao e limpeza");
+  const link = buildWhatsappLink("(11) 99999-0000", "Mariana", "Higienização e limpeza");
 
   assert.ok(link.startsWith("https://wa.me/11999990000?text="));
   assert.ok(decodeURIComponent(link).includes("Mariana"));
-  assert.ok(decodeURIComponent(link).includes("Higienizacao e limpeza"));
+  assert.ok(decodeURIComponent(link).includes("Higienização e limpeza"));
 });

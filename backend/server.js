@@ -15,7 +15,7 @@ async function bootstrap() {
 bootstrap()
   .then(() => {
     app.listen(port, () => {
-      console.log(`JCA Climatizacao CRM API rodando em http://localhost:${port}`);
+      console.log(`JCA Climatização CRM API rodando em http://localhost:${port}`);
     });
   })
   .catch((error) => {
