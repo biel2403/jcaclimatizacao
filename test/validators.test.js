@@ -6,7 +6,7 @@ test("valida lead valido", () => {
   const result = validateLeadInput({
     name: "Mariana",
     phone: "(11) 99999-0000",
-    serviceType: "Higienizacao",
+    serviceType: "Higienizacao e limpeza",
     email: "mariana@example.com",
     quantity: "1"
   });

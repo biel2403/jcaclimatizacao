@@ -19,7 +19,7 @@ INSERT INTO leads (
   'mariana@example.com',
   'Sao Paulo',
   'Centro',
-  'Higienizacao',
+  'Higienizacao e limpeza',
   'Split',
   'LG',
   '12000',

@@ -10,8 +10,7 @@ const VALID_STATUSES = [
 const VALID_SERVICES = [
   "Instalacao",
   "Manutencao",
-  "Higienizacao",
-  "Limpeza",
+  "Higienizacao e limpeza",
   "Reparo",
   "Outro"
 ];
