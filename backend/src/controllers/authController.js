@@ -20,7 +20,7 @@ async function loginController(req, res, next) {
 function logoutController(req, res, next) {
   req.session.destroy((error) => {
     if (error) return next(error);
-    res.clearCookie("climapro.sid");
+    res.clearCookie("jca.sid");
     return res.json({ ok: true });
   });
 }

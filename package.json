@@ -1,8 +1,8 @@
 {
-  "name": "climapro-crm",
+  "name": "jca-climatizacao-crm",
   "version": "0.1.0",
   "private": true,
-  "description": "CRM simples para captacao e gerenciamento de solicitacoes de orcamento de ar-condicionado.",
+  "description": "CRM simples para captacao e gerenciamento de solicitacoes de orcamento da JCA Climatizacao.",
   "main": "backend/server.js",
   "scripts": {
     "dev": "node backend/server.js",

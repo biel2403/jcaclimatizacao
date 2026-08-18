@@ -1,6 +1,6 @@
-# ClimaPro CRM
+# JCA Climatizacao CRM
 
-CRM simples para captacao e gerenciamento de solicitacoes de orcamento de servicos de ar-condicionado.
+CRM simples para captacao e gerenciamento de solicitacoes de orcamento da JCA Climatizacao.
 
 ## Stack
 
@@ -70,4 +70,4 @@ Veja [docs/deployment.md](docs/deployment.md).
 
 ## Observacao sobre a logo
 
-Substitua `frontend/assets/logo/placeholder.svg` pela logo real mantendo o mesmo caminho, ou ajuste os arquivos HTML para apontar para outro arquivo dentro de `frontend/assets/logo/`.
+A logo aplicada esta em `frontend/assets/logo/jca-logo.png`. Para substituir por uma versao final em alta qualidade, mantenha o mesmo caminho ou ajuste as referencias nos arquivos HTML.

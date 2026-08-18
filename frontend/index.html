@@ -3,19 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ClimaPro CRM | Ar-condicionado</title>
+    <title>JCA Climatizacao | Ar-condicionado</title>
     <meta name="description" content="Instalacao, manutencao, higienizacao e reparo de ar-condicionado. Solicite seu orcamento." />
-    <meta property="og:title" content="ClimaPro CRM | Ar-condicionado" />
+    <meta property="og:title" content="JCA Climatizacao | Ar-condicionado" />
     <meta property="og:description" content="Solicite orcamento para servicos de climatizacao." />
-    <link rel="icon" href="assets/logo/placeholder.svg" />
+    <link rel="icon" href="assets/logo/jca-logo.png" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="index.html">
-          <img class="brand-logo" src="assets/logo/placeholder.svg" alt="Logo da empresa" />
-          <span data-brand-name>ClimaPro CRM</span>
+          <img class="brand-logo" src="assets/logo/jca-logo.png" alt="Logo JCA Climatizacao" />
+          <span data-brand-name>JCA Climatizacao</span>
         </a>
         <nav class="nav">
           <a href="#servicos">Servicos</a>
@@ -31,7 +31,8 @@
       <section class="hero">
         <div class="container hero-grid">
           <div>
-            <h1>Ar-condicionado instalado, limpo e funcionando bem.</h1>
+            <span class="eyebrow">Especialistas em climatizacao</span>
+            <h1>Conforto termico com atendimento rapido e acabamento profissional.</h1>
             <p>
               Atendimento profissional para instalacao, manutencao,
               higienizacao, diagnostico e reparo de aparelhos residenciais e comerciais.
@@ -41,11 +42,37 @@
               <a class="button secondary" data-whatsapp-link href="#">Falar pelo WhatsApp</a>
             </div>
           </div>
-          <div class="hero-card">
-            <strong>Atendimento rapido e direto</strong>
-            <p>
-              Preencha uma solicitacao em menos de 2 minutos. O profissional recebe seu pedido no CRM e retorna pelo WhatsApp.
-            </p>
+          <div class="hero-visual" aria-label="Ilustracao de climatizacao">
+            <div class="hero-logo-orbit">
+              <img src="assets/logo/jca-logo.png" alt="Logo JCA Climatizacao" />
+            </div>
+            <svg class="climate-svg" viewBox="0 0 420 300" role="img" aria-label="Ar-condicionado com fluxo de ar frio e quente">
+              <defs>
+                <linearGradient id="unit" x1="0" x2="1">
+                  <stop offset="0" stop-color="#f8fbff" />
+                  <stop offset="1" stop-color="#9aa8b8" />
+                </linearGradient>
+                <linearGradient id="cold" x1="0" x2="1">
+                  <stop offset="0" stop-color="#39d8ff" />
+                  <stop offset="1" stop-color="#1677ff" />
+                </linearGradient>
+                <linearGradient id="hot" x1="0" x2="1">
+                  <stop offset="0" stop-color="#ffb11f" />
+                  <stop offset="1" stop-color="#f0441f" />
+                </linearGradient>
+              </defs>
+              <rect x="54" y="48" width="312" height="96" rx="18" fill="url(#unit)" />
+              <rect x="80" y="102" width="260" height="16" rx="8" fill="#0b1f3f" opacity=".78" />
+              <circle cx="326" cy="78" r="8" fill="#37d8ff" />
+              <path d="M98 171 C136 203 180 200 220 173" fill="none" stroke="url(#cold)" stroke-width="12" stroke-linecap="round" />
+              <path d="M154 219 C194 247 259 229 296 194" fill="none" stroke="url(#cold)" stroke-width="10" stroke-linecap="round" opacity=".75" />
+              <path d="M257 164 C294 184 326 180 350 151" fill="none" stroke="url(#hot)" stroke-width="11" stroke-linecap="round" />
+              <path d="M206 162 l15 26 h-30 l15-26Z" fill="#ffffff" opacity=".85" />
+            </svg>
+            <div class="hero-proof">
+              <strong>Resposta pelo WhatsApp</strong>
+              <span>Seu pedido vira lead no CRM e entra na fila de atendimento.</span>
+            </div>
           </div>
         </div>
       </section>
@@ -57,12 +84,12 @@
             <p>Escolha o tipo de atendimento que voce precisa.</p>
           </div>
           <div class="cards">
-            <article class="card"><span class="service-icon">I</span><h3>Instalacao</h3><p>Instalacao de aparelhos novos com acabamento e orientacao de uso.</p></article>
-            <article class="card"><span class="service-icon">M</span><h3>Manutencao</h3><p>Verificacao preventiva para reduzir falhas e melhorar desempenho.</p></article>
-            <article class="card"><span class="service-icon">H</span><h3>Higienizacao</h3><p>Limpeza interna para melhorar qualidade do ar e eliminar sujeiras.</p></article>
-            <article class="card"><span class="service-icon">L</span><h3>Limpeza</h3><p>Limpeza de filtros, evaporadora e componentes acessiveis.</p></article>
-            <article class="card"><span class="service-icon">R</span><h3>Reparo</h3><p>Correcao de falhas, vazamentos, ruidos e problemas de refrigeracao.</p></article>
-            <article class="card"><span class="service-icon">D</span><h3>Diagnostico</h3><p>Avaliacao tecnica para entender o problema antes do servico.</p></article>
+            <article class="card"><span class="service-icon cold-icon">❄</span><h3>Instalacao</h3><p>Instalacao de aparelhos novos com acabamento e orientacao de uso.</p></article>
+            <article class="card"><span class="service-icon">✓</span><h3>Manutencao</h3><p>Verificacao preventiva para reduzir falhas e melhorar desempenho.</p></article>
+            <article class="card"><span class="service-icon cold-icon">✦</span><h3>Higienizacao</h3><p>Limpeza interna para melhorar qualidade do ar e eliminar sujeiras.</p></article>
+            <article class="card"><span class="service-icon">⌁</span><h3>Limpeza</h3><p>Limpeza de filtros, evaporadora e componentes acessiveis.</p></article>
+            <article class="card"><span class="service-icon hot-icon">⚡</span><h3>Reparo</h3><p>Correcao de falhas, vazamentos, ruidos e problemas de refrigeracao.</p></article>
+            <article class="card"><span class="service-icon">◎</span><h3>Diagnostico</h3><p>Avaliacao tecnica para entender o problema antes do servico.</p></article>
           </div>
         </div>
       </section>
@@ -84,7 +111,7 @@
         <div class="container cards">
           <article class="card"><h3>Cidade</h3><p data-brand-city>Sao Paulo - SP</p></article>
           <article class="card"><h3>WhatsApp</h3><p data-brand-phone>(11) 99999-9999</p></article>
-          <article class="card"><h3>Email</h3><p data-brand-email>contato@climapro.com.br</p></article>
+          <article class="card"><h3>Email</h3><p data-brand-email>contato@jcaclimatizacao.com.br</p></article>
         </div>
       </section>
     </main>
@@ -92,8 +119,8 @@
     <footer class="footer">
       <div class="container footer-grid">
         <div class="brand">
-          <img class="brand-logo" src="assets/logo/placeholder.svg" alt="Logo da empresa" />
-          <span data-brand-name>ClimaPro CRM</span>
+          <img class="brand-logo" src="assets/logo/jca-logo.png" alt="Logo JCA Climatizacao" />
+          <span data-brand-name>JCA Climatizacao</span>
         </div>
         <p>Copyright <span id="year"></span> - <span data-brand-city>Sao Paulo - SP</span></p>
       </div>

@@ -38,7 +38,7 @@ function createApp() {
         tableName: "user_sessions",
         createTableIfMissing: true
       }),
-      name: "climapro.sid",
+      name: "jca.sid",
       secret: process.env.SESSION_SECRET || "dev-secret-change-me",
       resave: false,
       saveUninitialized: false,

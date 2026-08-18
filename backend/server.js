@@ -12,6 +12,6 @@ ensureAdminUser()
   })
   .finally(() => {
     app.listen(port, () => {
-      console.log(`ClimaPro CRM API rodando em http://localhost:${port}`);
+      console.log(`JCA Climatizacao CRM API rodando em http://localhost:${port}`);
     });
   });

@@ -1,4 +1,4 @@
-const API_BASE_URL = window.CLIMAPRO_CONFIG.apiBaseUrl;
+const API_BASE_URL = window.JCA_CONFIG.apiBaseUrl;
 
 async function apiFetch(path, options = {}) {
   const response = await fetch(`${API_BASE_URL}${path}`, {
@@ -20,7 +20,7 @@ async function apiFetch(path, options = {}) {
 }
 
 function setBranding() {
-  const brand = window.CLIMAPRO_CONFIG.brand;
+  const brand = window.JCA_CONFIG.brand;
   document.querySelectorAll("[data-brand-name]").forEach((el) => {
     el.textContent = brand.name;
   });
