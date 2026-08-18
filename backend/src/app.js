@@ -10,6 +10,7 @@ const { errorHandler } = require("./middleware/errorHandler");
 const authRoutes = require("./routes/authRoutes");
 const leadRoutes = require("./routes/leadRoutes");
 const dashboardRoutes = require("./routes/dashboardRoutes");
+const { getSessionCookieOptions } = require("./config/sessionCookie");
 
 function createApp() {
   const app = express();
@@ -42,12 +43,7 @@ function createApp() {
       secret: process.env.SESSION_SECRET || "dev-secret-change-me",
       resave: false,
       saveUninitialized: false,
-      cookie: {
-        httpOnly: true,
-        sameSite: "lax",
-        secure: process.env.NODE_ENV === "production",
-        maxAge: 1000 * 60 * 60 * 8
-      }
+      cookie: getSessionCookieOptions()
     })
   );
 

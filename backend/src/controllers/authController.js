@@ -1,5 +1,6 @@
 const { login } = require("../services/authService");
 const { AppError } = require("../utils/AppError");
+const { getSessionCookieOptions } = require("../config/sessionCookie");
 
 async function loginController(req, res, next) {
   try {
@@ -20,7 +21,7 @@ async function loginController(req, res, next) {
 function logoutController(req, res, next) {
   req.session.destroy((error) => {
     if (error) return next(error);
-    res.clearCookie("jca.sid");
+    res.clearCookie("jca.sid", getSessionCookieOptions());
     return res.json({ ok: true });
   });
 }
