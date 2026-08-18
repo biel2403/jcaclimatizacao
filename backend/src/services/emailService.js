@@ -2,6 +2,10 @@ const nodemailer = require("nodemailer");
 const { buildWhatsappLink } = require("../utils/whatsapp");
 
 function isEmailEnabled() {
+  if (process.env.RESEND_API_KEY && process.env.MAIL_FROM && process.env.LEAD_NOTIFICATION_EMAIL) {
+    return true;
+  }
+
   return Boolean(
     process.env.SMTP_HOST &&
       process.env.SMTP_PORT &&
@@ -30,6 +34,43 @@ function getTransporter() {
       user: process.env.SMTP_USER,
       pass: process.env.SMTP_PASS
     }
+  });
+}
+
+async function sendWithResend(email) {
+  const response = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      from: process.env.MAIL_FROM,
+      to: [process.env.LEAD_NOTIFICATION_EMAIL],
+      subject: email.subject,
+      text: email.text,
+      html: email.html
+    })
+  });
+
+  const data = await response.json().catch(() => ({}));
+
+  if (!response.ok) {
+    throw new Error(data.message || data.error || "Falha ao enviar email via Resend.");
+  }
+
+  return data;
+}
+
+async function sendWithSmtp(email) {
+  const transporter = getTransporter();
+
+  await transporter.sendMail({
+    from: process.env.MAIL_FROM,
+    to: process.env.LEAD_NOTIFICATION_EMAIL,
+    subject: email.subject,
+    text: email.text,
+    html: email.html
   });
 }
 
@@ -103,18 +144,16 @@ async function notifyNewLead(lead) {
     return { skipped: true };
   }
 
-  const transporter = getTransporter();
   const email = buildLeadEmail(lead);
 
-  await transporter.sendMail({
-    from: process.env.MAIL_FROM,
-    to: process.env.LEAD_NOTIFICATION_EMAIL,
-    subject: email.subject,
-    text: email.text,
-    html: email.html
-  });
+  if (process.env.RESEND_API_KEY) {
+    await sendWithResend(email);
+    return { sent: true, provider: "resend" };
+  }
 
-  return { sent: true };
+  await sendWithSmtp(email);
+
+  return { sent: true, provider: "smtp" };
 }
 
 module.exports = {

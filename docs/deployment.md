@@ -20,16 +20,37 @@
    - `COMPANY_WHATSAPP`
    - `LEAD_NOTIFICATION_EMAIL`
    - `MAIL_FROM`
+   - `RESEND_API_KEY`
    - `SMTP_HOST`
    - `SMTP_PORT`
    - `SMTP_USER`
    - `SMTP_PASS`
-5. Conferir variaveis geradas/definidas:
+5. Para Render free, prefira `RESEND_API_KEY`; SMTP nas portas `25`, `465` e `587` pode ser bloqueado.
+6. Conferir variaveis geradas/definidas:
    - `SESSION_SECRET`
    - `ADMIN_NAME`
    - `COMPANY_NAME`
    - `DATABASE_URL`
    - `SMTP_SECURE`
+
+### Email de novos leads
+
+No Render free, use Resend:
+
+1. Criar uma conta em `https://resend.com`.
+2. Criar uma API key.
+3. Configurar no Render:
+   - `LEAD_NOTIFICATION_EMAIL`
+   - `MAIL_FROM`
+   - `RESEND_API_KEY`
+
+O SMTP continua disponivel como fallback para ambientes que permitam saida SMTP:
+
+   - `MAIL_FROM`
+   - `SMTP_HOST`
+   - `SMTP_PORT`
+   - `SMTP_USER`
+   - `SMTP_PASS`
 
 ## PostgreSQL
 

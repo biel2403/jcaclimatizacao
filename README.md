@@ -70,6 +70,10 @@ Para receber email quando chegar lead novo, configure tambem:
 
 - `LEAD_NOTIFICATION_EMAIL`
 - `MAIL_FROM`
+- `RESEND_API_KEY`
+
+No Render free, prefira Resend porque ele envia por HTTPS. SMTP comum pode ser bloqueado nas portas 25, 465 e 587. O fallback SMTP usa:
+
 - `SMTP_HOST`
 - `SMTP_PORT`
 - `SMTP_SECURE`
