@@ -1,10 +1,12 @@
 databases:
   - name: jca-climatizacao-db
+    plan: free
 
 services:
   - type: web
     name: jca-climatizacao-api
     runtime: node
+    plan: free
     buildCommand: npm ci
     preDeployCommand: npm run db:migrate
     startCommand: npm start
