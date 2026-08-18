@@ -298,7 +298,21 @@ button {
   color: #ffffff;
   background: linear-gradient(135deg, var(--navy-800), var(--blue-500));
   border-radius: 14px;
-  font-weight: 900;
+}
+
+.service-icon svg {
+  width: 27px;
+  height: 27px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 180ms ease;
+}
+
+.card:hover .service-icon svg {
+  transform: scale(1.08);
 }
 
 .service-icon.hot-icon {
