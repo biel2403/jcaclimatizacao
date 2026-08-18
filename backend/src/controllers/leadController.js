@@ -8,6 +8,7 @@ const {
 const { validateLeadInput } = require("../utils/validators");
 const { buildWhatsappLink } = require("../utils/whatsapp");
 const { AppError } = require("../utils/AppError");
+const { notifyNewLead } = require("../services/emailService");
 
 async function createLeadController(req, res, next) {
   try {
@@ -22,6 +23,9 @@ async function createLeadController(req, res, next) {
     }
 
     const lead = await createLead(parsed.data);
+    notifyNewLead(lead).catch((error) => {
+      console.warn("Email de novo lead nao foi enviado:", error.message);
+    });
     res.status(201).json({ lead });
   } catch (error) {
     next(error);

@@ -18,11 +18,18 @@
    - `ADMIN_EMAIL`
    - `ADMIN_PASSWORD`
    - `COMPANY_WHATSAPP`
+   - `LEAD_NOTIFICATION_EMAIL`
+   - `MAIL_FROM`
+   - `SMTP_HOST`
+   - `SMTP_PORT`
+   - `SMTP_USER`
+   - `SMTP_PASS`
 5. Conferir variaveis geradas/definidas:
    - `SESSION_SECRET`
    - `ADMIN_NAME`
    - `COMPANY_NAME`
    - `DATABASE_URL`
+   - `SMTP_SECURE`
 
 ## PostgreSQL
 
@@ -40,5 +47,6 @@
 - Leads aparecem no CRM.
 - Status e observacoes funcionam.
 - WhatsApp abre com mensagem.
+- Email de novo lead chega no destinatario configurado.
 - `FRONTEND_URL` no Render esta igual ao dominio final da Vercel.
 - URL da API no `frontend/js/config.js` esta igual ao dominio final do Render.

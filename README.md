@@ -66,6 +66,16 @@ O backend cria/atualiza o administrador inicial com as variaveis:
 - `ADMIN_EMAIL`
 - `ADMIN_PASSWORD`
 
+Para receber email quando chegar lead novo, configure tambem:
+
+- `LEAD_NOTIFICATION_EMAIL`
+- `MAIL_FROM`
+- `SMTP_HOST`
+- `SMTP_PORT`
+- `SMTP_SECURE`
+- `SMTP_USER`
+- `SMTP_PASS`
+
 ## Deploy
 
 - Frontend: Vercel, usando o diretorio `frontend`

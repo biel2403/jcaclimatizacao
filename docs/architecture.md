@@ -27,6 +27,7 @@ PostgreSQL -> banco de dados
 - CORS restrito ao `FRONTEND_URL`.
 - `render.yaml` descreve API e PostgreSQL para deploy no Render.
 - `backend/src/database/migrate.js` aplica o schema usando `pg`, sem depender do cliente `psql`.
+- `nodemailer` envia email de notificação quando um novo lead e cadastrado, se SMTP estiver configurado.
 
 ## Banco
 
