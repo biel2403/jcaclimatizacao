@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | ClimaPro CRM</title>
+    <link rel="stylesheet" href="../css/admin.css" />
+  </head>
+  <body>
+    <div class="admin-shell">
+      <header class="admin-header">
+        <div class="brand">
+          <img class="brand-logo" src="../assets/logo/placeholder.svg" alt="Logo da empresa" />
+          <span data-brand-name>ClimaPro CRM</span>
+        </div>
+        <nav class="admin-nav">
+          <a href="dashboard.html">Dashboard</a>
+          <a href="leads.html">Leads</a>
+          <button class="secondary" data-logout>Sair</button>
+        </nav>
+      </header>
+      <main class="admin-main">
+        <h1>Dashboard</h1>
+        <section id="metrics" class="metrics"></section>
+        <section class="panel">
+          <h2>Solicitacoes recentes</h2>
+          <div id="recentLeads" class="lead-list"></div>
+        </section>
+      </main>
+    </div>
+    <script src="../js/config.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/admin.js"></script>
+    <script src="../js/dashboard.js"></script>
+  </body>
+</html>

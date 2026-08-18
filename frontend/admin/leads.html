@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leads | ClimaPro CRM</title>
+    <link rel="stylesheet" href="../css/admin.css" />
+  </head>
+  <body>
+    <div class="admin-shell">
+      <header class="admin-header">
+        <div class="brand">
+          <img class="brand-logo" src="../assets/logo/placeholder.svg" alt="Logo da empresa" />
+          <span data-brand-name>ClimaPro CRM</span>
+        </div>
+        <nav class="admin-nav">
+          <a href="dashboard.html">Dashboard</a>
+          <a href="leads.html">Leads</a>
+          <button class="secondary" data-logout>Sair</button>
+        </nav>
+      </header>
+      <main class="admin-main">
+        <div class="toolbar">
+          <h1>Leads</h1>
+          <form id="filters" class="filters">
+            <input name="q" type="search" placeholder="Buscar nome ou WhatsApp" />
+            <select name="status">
+              <option value="">Todos</option>
+              <option value="NOVO">Novo</option>
+              <option value="CONTATO">Em contato</option>
+              <option value="ORCAMENTO">Orcamento</option>
+              <option value="NEGOCIACAO">Negociacao</option>
+              <option value="FECHADO">Fechado</option>
+              <option value="PERDIDO">Perdido</option>
+            </select>
+            <select name="sort">
+              <option value="desc">Mais recentes</option>
+              <option value="asc">Mais antigos</option>
+            </select>
+            <button type="submit">Filtrar</button>
+          </form>
+        </div>
+        <section id="leadList" class="lead-list"></section>
+      </main>
+    </div>
+    <script src="../js/config.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/admin.js"></script>
+    <script src="../js/leads.js"></script>
+  </body>
+</html>

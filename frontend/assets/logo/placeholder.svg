@@ -1,0 +1,5 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Espaco para logo real">
+  <rect width="120" height="120" rx="16" fill="#dff7f1"/>
+  <path d="M31 64h58M41 46h38M44 82h32" stroke="#0f766e" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="60" cy="64" r="13" fill="#0f766e"/>
+</svg>

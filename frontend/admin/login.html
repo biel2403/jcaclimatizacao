@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | ClimaPro CRM</title>
+    <link rel="stylesheet" href="../css/admin.css" />
+  </head>
+  <body>
+    <main class="login-page">
+      <section class="login-panel">
+        <div class="brand">
+          <img class="brand-logo" src="../assets/logo/placeholder.svg" alt="Logo da empresa" />
+          <span data-brand-name>ClimaPro CRM</span>
+        </div>
+        <h1>Acesso administrativo</h1>
+        <form id="loginForm" class="grid">
+          <label>Email<input name="email" type="email" required /></label>
+          <label>Senha<input name="password" type="password" required /></label>
+          <button type="submit">Entrar</button>
+          <p id="loginMessage" class="message" hidden></p>
+        </form>
+      </section>
+    </main>
+    <script src="../js/config.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/login.js"></script>
+  </body>
+</html>

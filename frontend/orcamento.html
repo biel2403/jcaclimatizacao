@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solicitar orcamento | ClimaPro CRM</title>
+    <meta name="description" content="Solicite orcamento para instalacao, manutencao, higienizacao ou reparo de ar-condicionado." />
+    <link rel="icon" href="assets/logo/placeholder.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <img class="brand-logo" src="assets/logo/placeholder.svg" alt="Logo da empresa" />
+          <span data-brand-name>ClimaPro CRM</span>
+        </a>
+        <nav class="nav">
+          <a href="index.html">Inicio</a>
+          <a class="button secondary" data-whatsapp-link href="#">WhatsApp</a>
+        </nav>
+      </div>
+    </header>
+    <main class="form-page">
+      <div class="container">
+        <section class="form-panel">
+          <h1>Solicitar orcamento</h1>
+          <p>Preencha os dados principais. Entraremos em contato pelo WhatsApp.</p>
+          <form id="quoteForm" class="form-grid">
+            <label>Nome<input name="name" required maxlength="120" /></label>
+            <label>WhatsApp<input name="phone" required maxlength="30" placeholder="(11) 99999-9999" /></label>
+            <label>Email opcional<input name="email" type="email" maxlength="180" /></label>
+            <label>Cidade<input name="city" maxlength="100" /></label>
+            <label>Bairro<input name="neighborhood" maxlength="100" /></label>
+            <label>Servico
+              <select name="serviceType" required>
+                <option value="">Selecione</option>
+                <option>Instalacao</option>
+                <option>Manutencao</option>
+                <option>Higienizacao</option>
+                <option>Limpeza</option>
+                <option>Reparo</option>
+                <option>Outro</option>
+              </select>
+            </label>
+            <label>Tipo de equipamento<input name="equipmentType" maxlength="80" placeholder="Split, janela..." /></label>
+            <label>Marca<input name="brand" maxlength="80" /></label>
+            <label>BTUs<input name="btus" maxlength="40" placeholder="12000" /></label>
+            <label>Quantidade<input name="quantity" type="number" min="1" max="50" value="1" /></label>
+            <label class="full">Conte um pouco sobre o que voce precisa<textarea name="description" maxlength="1000"></textarea></label>
+            <label class="honeypot">Site da empresa<input name="companyWebsite" tabindex="-1" autocomplete="off" /></label>
+            <div class="full">
+              <button type="submit">Enviar solicitacao</button>
+              <p id="formMessage" class="message" hidden></p>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/orcamento.js"></script>
+  </body>
+</html>
