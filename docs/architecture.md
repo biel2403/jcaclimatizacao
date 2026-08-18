@@ -26,7 +26,7 @@ PostgreSQL -> banco de dados
 - Hash de senha com bcrypt.
 - CORS restrito ao `FRONTEND_URL`.
 - `render.yaml` descreve API e PostgreSQL para deploy no Render.
-- `scripts/migrate.js` aplica o schema usando `pg`, sem depender do cliente `psql`.
+- `backend/src/database/migrate.js` aplica o schema usando `pg`, sem depender do cliente `psql`.
 
 ## Banco
 

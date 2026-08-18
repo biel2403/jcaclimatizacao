@@ -12,7 +12,7 @@
 
 1. Criar Blueprint a partir do `render.yaml`.
 2. O Render cria o Web Service e o PostgreSQL.
-3. O `preDeployCommand` executa `npm run db:migrate` para aplicar `database/schema.sql`.
+3. A API aplica `database/schema.sql` automaticamente ao iniciar.
 4. Configurar variaveis marcadas como segredo/sync false:
    - `FRONTEND_URL`
    - `ADMIN_EMAIL`
@@ -27,7 +27,7 @@
 ## PostgreSQL
 
 1. No Blueprint, o banco `jca-climatizacao-db` fornece `DATABASE_URL` para a API.
-2. O schema e aplicado automaticamente no deploy por `scripts/migrate.js`.
+2. O schema e aplicado automaticamente no boot da API por `backend/src/database/migrate.js`.
 3. Para popular dados de exemplo localmente, use `npm run db:seed`.
 4. Configurar backups no provedor.
 

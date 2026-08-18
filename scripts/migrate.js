@@ -1,26 +1,11 @@
 require("dotenv").config();
 
-const fs = require("node:fs/promises");
-const path = require("node:path");
-const { Pool } = require("pg");
+const { pool } = require("../backend/src/database/pool");
+const { migrateDatabase } = require("../backend/src/database/migrate");
 
 async function migrate() {
-  if (!process.env.DATABASE_URL) {
-    throw new Error("DATABASE_URL nao configurada.");
-  }
-
-  const schemaPath = path.join(__dirname, "../database/schema.sql");
-  const schema = await fs.readFile(schemaPath, "utf8");
-  const pool = new Pool({
-    connectionString: process.env.DATABASE_URL,
-    ssl:
-      process.env.NODE_ENV === "production"
-        ? { rejectUnauthorized: false }
-        : false
-  });
-
   try {
-    await pool.query(schema);
+    await migrateDatabase();
     console.log("Schema aplicado com sucesso.");
   } finally {
     await pool.end();
