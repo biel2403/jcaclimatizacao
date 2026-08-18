@@ -10,20 +10,20 @@ async function loadLead() {
   detail.innerHTML = `
     <section class="panel">
       <h2>Cliente</h2>
-      <p><strong>WhatsApp:</strong> ${lead.phone}</p>
-      <p><strong>Email:</strong> ${lead.email || "Nao informado"}</p>
-      <p><strong>Cidade:</strong> ${lead.city || "Nao informada"}</p>
-      <p><strong>Bairro:</strong> ${lead.neighborhood || "Nao informado"}</p>
-      <a class="button" href="${lead.whatsappLink}" target="_blank" rel="noopener">Conversar pelo WhatsApp</a>
+      <p><strong>WhatsApp:</strong> ${escapeHtml(lead.phone)}</p>
+      <p><strong>Email:</strong> ${escapeHtml(lead.email || "Nao informado")}</p>
+      <p><strong>Cidade:</strong> ${escapeHtml(lead.city || "Nao informada")}</p>
+      <p><strong>Bairro:</strong> ${escapeHtml(lead.neighborhood || "Nao informado")}</p>
+      <a class="button" href="${escapeAttribute(lead.whatsappLink)}" target="_blank" rel="noopener">Conversar pelo WhatsApp</a>
     </section>
     <section class="panel">
       <h2>Solicitacao</h2>
-      <p><strong>Servico:</strong> ${lead.serviceType}</p>
-      <p><strong>Equipamento:</strong> ${lead.equipmentType || "Nao informado"}</p>
-      <p><strong>Marca:</strong> ${lead.brand || "Nao informada"}</p>
-      <p><strong>BTUs:</strong> ${lead.btus || "Nao informado"}</p>
-      <p><strong>Quantidade:</strong> ${lead.quantity}</p>
-      <p>${lead.description || "Sem descricao."}</p>
+      <p><strong>Servico:</strong> ${escapeHtml(lead.serviceType)}</p>
+      <p><strong>Equipamento:</strong> ${escapeHtml(lead.equipmentType || "Nao informado")}</p>
+      <p><strong>Marca:</strong> ${escapeHtml(lead.brand || "Nao informada")}</p>
+      <p><strong>BTUs:</strong> ${escapeHtml(lead.btus || "Nao informado")}</p>
+      <p><strong>Quantidade:</strong> ${escapeHtml(lead.quantity)}</p>
+      <p>${escapeHtml(lead.description || "Sem descricao.")}</p>
     </section>
     <section class="panel">
       <h2>Controle</h2>
@@ -39,7 +39,7 @@ async function loadLead() {
     </section>
     <section class="panel">
       <h2>Observacoes internas</h2>
-      <textarea id="notes">${lead.internalNotes || ""}</textarea>
+      <textarea id="notes">${escapeHtml(lead.internalNotes || "")}</textarea>
       <button id="saveNotes">Salvar observacoes</button>
     </section>
   `;

@@ -2,6 +2,9 @@
 
 Base local: `http://localhost:3001`
 
+Em producao, a URL publica depende do dominio criado no Render. O frontend usa
+`frontend/js/config.js` para decidir a base da API.
+
 ## Publico
 
 - `POST /api/leads`: cria lead.

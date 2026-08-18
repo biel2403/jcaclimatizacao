@@ -4,31 +4,32 @@
 
 1. Conectar repositorio GitHub.
 2. Selecionar o diretorio `frontend`.
-3. Configurar dominio.
-4. Ajustar `frontend/js/config.js` ou processo de build para apontar para a API do Render.
+3. Manter `frontend/vercel.json` no deploy.
+4. Configurar dominio.
+5. Conferir se `frontend/js/config.js` aponta para a URL publica da API no Render.
 
 ## Backend no Render
 
-1. Criar Web Service.
-2. Comando de instalacao: `npm install`.
-3. Comando de start: `npm start`.
-4. Configurar variaveis:
-   - `PORT`
-   - `DATABASE_URL`
-   - `SESSION_SECRET`
+1. Criar Blueprint a partir do `render.yaml`.
+2. O Render cria o Web Service e o PostgreSQL.
+3. O `preDeployCommand` executa `npm run db:migrate` para aplicar `database/schema.sql`.
+4. Configurar variaveis marcadas como segredo/sync false:
    - `FRONTEND_URL`
-   - `ADMIN_NAME`
    - `ADMIN_EMAIL`
    - `ADMIN_PASSWORD`
    - `COMPANY_WHATSAPP`
+5. Conferir variaveis geradas/definidas:
+   - `SESSION_SECRET`
+   - `ADMIN_NAME`
+   - `COMPANY_NAME`
+   - `DATABASE_URL`
 
 ## PostgreSQL
 
-1. Criar banco PostgreSQL.
-2. Copiar connection string para `DATABASE_URL`.
-3. Executar `database/schema.sql`.
-4. Opcionalmente executar `database/seed.sql`.
-5. Configurar backups no provedor.
+1. No Blueprint, o banco `jca-climatizacao-db` fornece `DATABASE_URL` para a API.
+2. O schema e aplicado automaticamente no deploy por `scripts/migrate.js`.
+3. Para popular dados de exemplo localmente, use `npm run db:seed`.
+4. Configurar backups no provedor.
 
 ## Checklist
 
@@ -39,3 +40,5 @@
 - Leads aparecem no CRM.
 - Status e observacoes funcionam.
 - WhatsApp abre com mensagem.
+- `FRONTEND_URL` no Render esta igual ao dominio final da Vercel.
+- URL da API no `frontend/js/config.js` esta igual ao dominio final do Render.

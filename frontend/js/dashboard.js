@@ -22,10 +22,10 @@ async function loadDashboard() {
         .map(
           (lead) => `
           <article class="lead-card">
-            <div><strong>${lead.name}</strong><div class="muted">${lead.serviceType}</div></div>
+            <div><strong>${escapeHtml(lead.name)}</strong><div class="muted">${escapeHtml(lead.serviceType)}</div></div>
             <span class="badge">${statusLabel(lead.status)}</span>
             <span class="muted">${formatDate(lead.createdAt)}</span>
-            <a class="button secondary" href="lead.html?id=${lead.id}">Abrir</a>
+            <a class="button secondary" href="lead.html?id=${encodeURIComponent(lead.id)}">Abrir</a>
           </article>
         `
         )

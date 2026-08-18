@@ -12,12 +12,12 @@ async function loadLeads() {
           (lead) => `
           <article class="lead-card">
             <div>
-              <strong>${lead.name}</strong>
-              <div class="muted">${lead.phone}</div>
+              <strong>${escapeHtml(lead.name)}</strong>
+              <div class="muted">${escapeHtml(lead.phone)}</div>
             </div>
-            <div>${lead.serviceType}<div class="muted">${lead.city || ""}</div></div>
+            <div>${escapeHtml(lead.serviceType)}<div class="muted">${escapeHtml(lead.city || "")}</div></div>
             <span class="badge">${statusLabel(lead.status)}</span>
-            <a class="button secondary" href="lead.html?id=${lead.id}">Detalhes</a>
+            <a class="button secondary" href="lead.html?id=${encodeURIComponent(lead.id)}">Detalhes</a>
           </article>
         `
         )

@@ -15,6 +15,7 @@ PostgreSQL -> banco de dados
 - HTML, CSS e JavaScript puro.
 - Configuracao central da API em `frontend/js/config.js`.
 - Paginas publicas e administrativas separadas.
+- `frontend/vercel.json` configura URLs limpas e headers basicos.
 
 ## Backend
 
@@ -24,6 +25,8 @@ PostgreSQL -> banco de dados
 - Sessao com cookie HTTP-only.
 - Hash de senha com bcrypt.
 - CORS restrito ao `FRONTEND_URL`.
+- `render.yaml` descreve API e PostgreSQL para deploy no Render.
+- `scripts/migrate.js` aplica o schema usando `pg`, sem depender do cliente `psql`.
 
 ## Banco
 

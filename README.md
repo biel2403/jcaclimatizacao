@@ -15,6 +15,7 @@ frontend/   Site publico e painel admin estatico
 backend/    API Express
 database/   SQL de schema e seed
 docs/       Documentacao do projeto
+scripts/    Automacoes locais e de deploy
 ```
 
 ## Execucao local
@@ -31,10 +32,15 @@ npm install
 copy .env.example .env
 ```
 
-3. Crie o banco PostgreSQL e rode:
+3. Crie o banco PostgreSQL e rode o schema:
 
 ```bash
-npm run db:schema
+npm run db:migrate
+```
+
+Se quiser dados iniciais de exemplo, rode tambem:
+
+```bash
 npm run db:seed
 ```
 
@@ -63,8 +69,12 @@ O backend cria/atualiza o administrador inicial com as variaveis:
 ## Deploy
 
 - Frontend: Vercel, usando o diretorio `frontend`
-- Backend: Render, executando `npm install` e `npm start`
+- Backend: Render, usando `render.yaml`
 - Banco: PostgreSQL, com `DATABASE_URL` no Render
+
+Em producao, o frontend aponta por padrao para `https://jca-climatizacao-api.onrender.com`.
+Se o Render criar outro dominio, ajuste `frontend/js/config.js` ou defina
+`window.JCA_API_BASE_URL` antes de carregar `config.js`.
 
 Veja [docs/deployment.md](docs/deployment.md).
 
