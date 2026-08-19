@@ -23,11 +23,11 @@ window.JCA_CONFIG = {
   brand: {
     name: "JCA Climatização",
     description: "Instalação, manutenção, higienização, limpeza e reparo de ar-condicionado.",
-    phone: "(11) 99999-9999",
-    whatsapp: "5511999999999",
-    email: "contato@jcaclimatizacao.com.br",
-    city: "São Paulo - SP",
+    phone: "(15) 99629-9888",
+    whatsapp: "5515996299888",
+    email: "jcaclimatizacao@gmail.com",
+    city: "Sorocaba - SP",
     regions: "Centro, Zona Leste, Zona Norte e regiões próximas",
-    instagram: "@jcaclimatizacao"
+    instagram: "@jcaclimatizacao_2026"
   }
 };
